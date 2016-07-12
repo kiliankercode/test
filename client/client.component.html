@@ -1,0 +1,82 @@
+<!-- FORMULAIRE CLIENT MATERIALIZE THEME -->
+<div>
+    <h1>{{titre}}</h1>
+
+        <div class="col s6">
+
+            <button (click)="ajouterClient()" type="button" class="btn-floating btn-large waves-effect waves-light red" ><i class="material-icons">add</i></button>
+            <a onclick="Materialize.toast('Vous avez créer un client !', 4000)"><button class="btn waves-effect waves-light" type="submit" name="action" (click)="onSubmit()">Enregister client<i class="material-icons right">done</i></button></a>
+        </div>
+    <div class="row">
+        <form class="col s6">
+            <div class="row">
+    <div *ngIf="enrClient">
+        <!--<div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" class="form-control" required [(ngModel)]="model.nom" name="nom" #nom="ngModel">
+            <span [hidden]="nom.valid" class="alert alert-danger">Vous devez entrer un nom !</span>
+        </div>-->
+        <div class="form-group">
+            <label>nom :</label>
+            <input type="text" class="form-control" placeholder="Obligatoire"
+                 [(ngModel)]="enrClient.nom">
+        </div>
+        <div class="form-group">
+            <label for="prenom">Prénom :</label>
+            <input type="text" class="form-control"
+                 [(ngModel)]="enrClient.prenom">
+        </div>
+        <div class="form-group">
+            <label for="age">Age :</label>
+            <input type="number" class="form-control"
+                 [(ngModel)]="enrClient.age">
+        </div>
+        <div class="form-group">
+            <label for="age">Caution :</label>
+            <input type="number" class="form-control"
+                 ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01"
+                 [(ngModel)]="enrClient.caution">
+        </div>
+        <div style="width: 100%; display: block;">
+            <a onclick="Materialize.toast('Vous avez supprimé client !', 4000)"><button class="btn waves-effect waves-light" type="submit" name="action" (click)="supprimerClient()">Supprimer client<i class="material-icons right">delete</i></button></a>
+           </div>
+           <div style="margin-top: 20px;">
+            <button class="btn waves-effect waves-light" type="submit" name="action" (click)="setPrecedent()">Précédent<i class="material-icons left">fast_rewind</i></button>
+            <button class="btn waves-effect waves-light" type="submit" name="action" (click)="setSuivant()">Suivant<i class="material-icons right">fast_forward</i></button>
+        </div>
+    </div>
+</div>
+  </form>
+  </div>
+  </div>
+  
+     <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
+      
+  <script>
+ Materialize.toast('I am a toast!', 4000) // 4000 is the duration of the toast
+  </script>
+
